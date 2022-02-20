@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery Store</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/p1_index.css">
+    <link rel="stylesheet" href="css/responsive1.css">
 
 </head>
 
@@ -16,12 +16,9 @@
     <div id="topbar">
         <div class="content">
             <ul>
-                <li><a href="signin.html">Sign in</a></li>
-
-                <li><a href="signup.html">Sign up</a></li>
-
-                <li><a id="name">Account</a></li>
-
+                <li><a href="signin.html">Sign in</a><span>|</span></li>
+                <li><a href="signup.html">Sign up</a><span>|</span></li>
+                <li><a id="name">Account</a><span>|</span></li>
                 <li><a href="cart.html">Cart</a></li>
             </ul>
         </div>
@@ -34,7 +31,7 @@
         </div>
         <p>TEL:514-6223777</p>
         <div class="nav-searchbar">
-            <input type="text" class="nav-input" placeholder="Product name">
+            <input type="text" class="nav-input">
             <input type="button" class="nav-search" value="Search">
         </div>
         <div class="clear"></div>
@@ -51,8 +48,7 @@
                     <a href="fruits.html">Fruits</a>
                     <a href="vegetables.html">Vegetables</a>
                     <a href="meat.html">Meat</a>
-                    <a href="#">Fish</a>
-                    <a href="#">Drinks</a>
+                    <a href="fish.html">Fish</a>
                 </div>
             </div>
         </div>
@@ -60,34 +56,46 @@
 
     <!-- banner -->
     <div id="banner" class="content">
-        <div class="slide clear">
-            <ul class="slide_pics">
-                <li><img src="image/newbanner.png" width="100%" height="100%"></li>
+        <div class="left">
+            <ul class="menu">
+                <a href="milk and eggs.html">
+                    <li>Milk & Eggs</li>
+                </a>
+                <a href="fruits.html">
+                    <li>Fruits</li>
+                </a>
+                <a href="vegetables.html">
+                    <li>Vegetables</li>
+                </a>
+                <a href="meat.html">
+                    <li>Meat</li>
+                </a>
+                <a href="fish.html">
+                    <li>Fish</li>
+                </a>
             </ul>
         </div>
-
-        <div class="clear"></div>
+        <div class="right"></div>
+    </div>
+    <div id="ip" class="content">
+        <h1>In Promotion</h1>
     </div>
 
     <!-- goods_list -->
     <div id="goods_list" class="content">
-
-        <h1>In Promotion</h1>
-
         <!-- item 1 -->
         <div class="item item-responsive1">
             <em>
                 <img class="img-responsive_1" src="image/save.png" alt="">
             </em>
-            <a href="items/apples.html"><img src="image/apples.JPG" width="100%" height="100%" alt="apples"></a>
+            <a href="p3_html/apple.html"><img src="image/apples.JPG" width="100%" height="100%" alt="apples"></a>
             <div class="description">
                 <p class="p1">Gala apples</p>
                 <p class="p2"></p>
                 <p class="p3">$2.29/lb</p>
                 <p class="p4">$1.19/lb</p>
             </div>
-            <a href=""><img class="img-responsive_2" src="image/cart.png" alt="" width="20%" height="20%"></a>
-
+            <a href="p3_html/apple.html"><img class="img-responsive_2" src="image/cart.png" alt="" width="20%" height="20%"></a>
         </div>
 
         <!-- item 2 -->
@@ -95,14 +103,14 @@
             <em>
                 <img class="img-responsive_1" src="image/save.png" alt="">
             </em>
-            <a href="items/yoghourt.html"><img src="image/yoghourt.JPG" width="100%" height="100%" alt="yogcourt"></a>
+            <a href="p3_html/yogurt.html"><img src="image/yogurt2.JPG" width="100%" height="100%" alt="yogcourt"></a>
             <div class="description">
-                <p class="p1">Dannon</p>
+                <p class="p1">Nestle Yogurt</p>
                 <p class="p2"></p>
-                <p class="p3">$7.99/each</p>
-                <p class="p4">$5.99/each</p>
+                <p class="p3">$4.29/each</p>
+                <p class="p4">$3.29/each</p>
             </div>
-            <a href="items/yoghourt.html"><img class="img-responsive_2" src="image/cart.png" alt="" width="20%"
+            <a href="p3_html/yogurt.html"><img class="img-responsive_2" src="image/cart.png" alt="" width="20%"
                     height="20%"></a>
         </div>
 
@@ -111,14 +119,14 @@
             <em>
                 <img class="img-responsive_1" src="image/save.png" alt="">
             </em>
-            <a href="items/beef.html"><img src="image/beef.JPG" width="100%" height="100%" alt="beef"></a>
+            <a href="p3_html/corn.html"><img src="image/corn.JPG" width="100%" height="100%" alt="beef"></a>
             <div class="description">
-                <p class="p1">AAA beef</p>
+                <p class="p1">Sweet Corns</p>
                 <p class="p2"></p>
-                <p class="p3">$6.99/lb</p>
-                <p class="p4">$4.99/lb</p>
+                <p class="p3">$4.99/5</p>
+                <p class="p4">$3.99/5</p>
             </div>
-            <a href="items/beef.html"><img class="img-responsive_2" src="image/cart.png" alt="" width="20%"
+            <a href="p3_html/corn.html"><img class="img-responsive_2" src="image/cart.png" alt="" width="20%"
                     height="20%"></a>
         </div>
 
@@ -127,14 +135,14 @@
             <em>
                 <img class="img-responsive_1" src="image/save.png" alt="">
             </em>
-            <a href="items/banana.html"><img src="image/banana.JPG" width="100%" height="100%" alt="banana"></a>
+            <a href="p3_html/banana.html"><img src="image/banana.JPG" width="100%" height="100%" alt="banana"></a>
             <div class="description">
                 <p class="p1">Bananas</p>
                 <p class="p2"></p>
                 <p class="p3">$1.29/lb</p>
                 <p class="p4">$0.89/lb</p>
             </div>
-            <a href="items/banana.html"><img class="img-responsive_2" src="image/cart.png" alt="" width="20%"
+            <a href="p3_html/banana.html"><img class="img-responsive_2" src="image/cart.png" alt="" width="20%"
                     height="20%"></a>
         </div>
 
@@ -143,30 +151,54 @@
             <em>
                 <img class="img-responsive_1" src="image/save.png" alt="">
             </em>
-            <a href="items/chicken.html"><img src="image/chinken.JPG" width="100%" height="100%" alt="chicken"></a>
+            <a href="p3_html/pepper.html"><img src="image/pepper.JPG" width="100%" height="100%" alt="chicken"></a>
             <div class="description">
-                <p class="p1">Fresh chicken</p>
+                <p class="p1">Peppers</p>
                 <p class="p2"></p>
-                <p class="p3">$2.99/lb</p>
-                <p class="p4">$1.29/lb</p>
+                <p class="p3">$0.99/each</p>
+                <p class="p4">$0.79/each</p>
             </div>
-            <a href="items/chicken.html"><img class="img-responsive_2" src="image/cart.png" alt="" width="20%"
+            <a href="p3_html/pepper.html"><img class="img-responsive_2" src="image/cart.png" alt="" width="20%"
                     height="20%"></a>
         </div>
         <div class="clear"></div>
     </div>
 
     <!-- footer -->
-    <footer>
-        <p>
-            <a href="#">Abount US</a>
-            <span>|</span>
-            <a href="#">Contact US</a>
-            <span>|</span>
-            <a href="#">Download App</a>
-        </p>
-        <p class="copyright">&copy; 2022 - 2026 Super Grocery All Rights Reserved</p>
-    </footer>
+    <div class="footer">
+        <div class="content">
+
+            <div class="copyright">
+                <img src="image/logo.jpg" width="56" height="56" alt="">
+                <p>&copy; 2022 - 2026 Super Grocery<br>&nbsp;&nbsp;&nbspAll Rights Reserved</p>
+                <a href="#" class="app">Download APP</a>
+            </div>
+
+            <div class="links">
+                <dl>
+                    <dt>Auout Us</dt>
+                    <dd><a href="#">At your service</a></dd>
+                    <dd><a href="#">Environment</a></dd>
+                    <dd><a href="#">In the community</a></dd>
+                    <dd><a href="#">Info Covid</a></dd>
+                </dl>
+                <dl>
+                    <dt>Promotions</dt>
+                    <dd><a href="#">Flyer</a></dd>
+                    <dd><a href="#">Gift cards</a></dd>
+                    <dd><a href="#">Discount</a></dd>
+                    <dd><a href="#">Rewards</a></dd>
+                </dl>
+                <dl>
+                    <dt>Customer Service</dt>
+                    <dd><a href="#">Contact us</a></dd>
+                    <dd><a href="#">Terms and conditions</a></dd>
+                    <dd><a href="#">Privacy</a></dd>
+                    <dd><a href="#">FAQ</a></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

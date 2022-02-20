@@ -1,30 +1,25 @@
-<!-- Written by: WEI HUANG -->
-<!-- ID: 40109362 -->
-<!-- This is cart.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" href="css/p4_cart.css">
-    <link rel="stylesheet" href="css/responsive4.css">
+    <title>Yogurt</title>
+    <link rel="stylesheet" href="../p3_css/milk_general.css">
+    <link rel="stylesheet" href="../css/responsive3.css">
 </head>
-
 <body>
     <!-- topbar -->
     <div id="topbar">
         <div class="content clearfix">
             <div class="logo">
-                <a href="index.html"><img src="image/logo.jpg" width="46" height="46" alt=""></a>
+                <a href="../index.html"><img src="../image/logo.jpg" width="46" height="46" alt=""></a>
             </div>
             <ul>
                 <li><a href="signin.html">Sign in</a><span>|</span></li>
                 <li><a href="signup.html">Sign up</a><span>|</span></li>
                 <li><a id="name">Account</a><span>|</span></li>
-                <li><a href="cart.html">Cart</a></li>
+                <li><a href="../cart.html">Cart</a></li>
             </ul>
         </div>
     </div>
@@ -32,7 +27,7 @@
     <!-- searchbar -->
     <div class="searchbar">
         <div class="w">
-            <button class="gerocery">ALL</button>
+            <button class="gerocery">Gerocery</button>
             <div class="dropdown_content">
                 <a href="../milk and eggs.html">Milk & Eggs</a>
                 <a href="../fruits.html">Fruits</a>
@@ -50,44 +45,33 @@
         <div class="w"></div>
     </div>
 
-    <!-- item cart -->
-    <div class="bigbox clearfix">
-        <div class="cart-container w">
-            <table class="cart-table">
-                <thead>
-                    <tr>
-                        <th>Items</th>
-                        <th>Quantity</th>
-                        <th>Subtotal</th>
-                    </tr>
-                </thead>
-            </table>
-            <div class="total-price">
-                <table>
-                    <tr>
-                        <td>Total Items</td>
-                        <td class="totalitems"></td>
-                    </tr>
-                    <tr>
-                        <td>Subtotal</td>
-                        <td class="subtotal"></td>
-                    </tr>
-                    <tr>
-                        <td>QST</td>
-                        <td class="qst"></td>
-                    </tr>
-                    <tr>
-                        <td>GST</td>
-                        <td class="gst"></td>
-                    </tr>
-                    <tr>
-                        <td>Total</td>
-                        <td class="total"></td>
-                    </tr>
-                </table>
-                <button class="ea">Empty All</button>
-                <button class="cs">Continue Shopping</button>
-                <button class="checkout">Check Out</button>
+    <!-- items -->
+    <div class="box">
+        <div class="w">
+            <div class="picture">
+                <em>
+                    <img src="../image/save.png" alt="">
+                </em>
+                <img src="../image/yogurt2.JPG" width="500px" height="500px" alt="">
+            </div>
+            <div class="dis">
+                <h1 class="name">Nestle Yogurt</h1>
+                <p class="number">Item #: 000003</p>
+                <h2 class="price">$4.29/each</h2>
+                <h3 class="sp">$3.19/each</h3>
+                <p class="qua">Quantity:</p>
+                <div class="na">
+                    <input type="number" id="quan" />
+                    <button id="add"  onclick="addQuantity('lactancia', this)"> Add </button>
+                </div>
+                <br>
+                <hr/>
+                <h2 class="pd">Product Details</h2>
+                <button id="showmore"> show more</button>
+                <p id="smd">The calcium content of 100 grams of yogurt is 118 mg, 
+                    while the calcium content of the same portion of milk is 104 mg, 
+                    making the calcium content of yogurt slightly higher than that 
+                    of milk.</p>
             </div>
         </div>
     </div>
@@ -97,7 +81,7 @@
         <div class="w">
 
             <div class="copyright">
-                <img src="image/logo.jpg" width="46" height="46" alt="">
+                <img src="../image/logo.jpg" width="46" height="46" alt="">
                 <a href="#" class="app">Download APP</a>
                 <p>&copy; 2022 - 2026 Super Grocery<br>&nbsp;&nbsp;&nbspAll Rights Reserved</p>
             </div>
@@ -127,7 +111,5 @@
             </div>
         </div>
     </div>
-    
 </body>
-
 </html>

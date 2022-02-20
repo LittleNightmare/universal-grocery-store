@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* Large devices (desktops, less than 1220px) */
+@media screen and (max-width: 1219px) {
+    .w {
+        width: 1000px;
+        margin: auto;
+    }
+    
+    /* topbar */
+    #topbar .content {
+        width: 1000px;
+    }
+
+    /* searchbar */
+    .searchbar .w .gerocery {
+        width: 164px;
+    }
+    .searchbar .w .dropdown_content {
+        min-width: 164px;
+    }
+    .searchbar input {
+        width: 750px;
+    }
+    .searchbar .search {
+        width: 82px;
+    }
+    
+    .word {
+        margin-top: 8px;
+    }
+}

@@ -1,0 +1,349 @@
+@charset "utf-8";
+/* Large devices (desktops, less than 1220px) */
+@media screen and (max-width: 1219px) {
+    .w {
+        width: 1000px;
+        margin: auto;
+    }
+    
+    /* topbar */
+    #topbar .content {
+        width: 1000px;
+    }
+
+    /* searchbar */
+    .searchbar .w .gerocery {
+        width: 164px;
+    }
+    .searchbar .w .dropdown_content {
+        min-width: 164px;
+    }
+    .searchbar input {
+        width: 750px;
+    }
+    .searchbar .search {
+        width: 82px;
+    }
+
+    /* item */
+    .box .w {
+        height: 500px;
+    }
+    .box .w .picture {
+        width: 400px;
+        height: 400px;
+    }
+    .box .w .dis {
+        width: 500px;
+        height: 400px;
+    }
+}
+
+/* Medium devices (tablets, less than 960px) */
+@media screen and (max-width: 959px) {
+    .w {
+        width: 750px;
+        margin: auto;
+    }
+
+    /* topbar */
+    #topbar .content {
+        width: 750px;
+    }
+
+    /* searchbar */
+    .searchbar .w .gerocery {
+        width: 123px;
+    }
+    .searchbar .w .dropdown_content {
+        min-width: 123px;
+    }
+    .searchbar input {
+        width: 562px;
+    }
+    .searchbar .search {
+        width: 61px;
+    }
+
+    /* item */
+    .box .w .picture {
+        width: 300px;
+        height: 300px;
+    }
+    .box .w .dis {
+        width: 375px;
+    }
+    .box .w .number {
+        margin-top: 12px;
+    }
+    .box .w .price {
+        margin-top: 12px;
+    }
+    .box .w .sp {
+        margin-top: 12px;
+    }
+    .box .w .qua {
+        margin-top: 12px;
+        margin-bottom: 8px;
+    }
+    .box .w .na {
+        margin-bottom: 12px;
+    }
+    .box .w .pd {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .box .w #showmore {
+        margin-bottom: 10px;
+    }
+
+    /* footer */
+    .copyright .app {
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+        line-height: 30px;
+    }
+    .links dl {
+        float: left;
+        margin-left: 30px;
+        margin-right: 20px;
+    }
+    .links dl dt {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+    .links dl dd {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media screen and (max-width: 767px) {
+    .w {
+        width: 460px;
+        margin: auto;
+    }
+    
+    /* topbar */
+    #topbar .content {
+        width: 460px;
+    }
+
+    /* searchbar */
+    .searchbar .w .gerocery {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .searchbar .w .dropdown_content {
+        min-width: 100px;
+    }
+    .searchbar input {
+        width: 398px;
+    }
+    .searchbar .search {
+        width: 58px;
+    }
+
+    /* item */
+    .box .w {
+        height: 500px;
+    }
+    .box .w .picture {
+        width: 180px;
+        height: 180px;
+    }
+    .box .w .dis {
+        display: block;
+        width: 235px;
+        padding-left: 20px;
+        margin-left: 10px;
+    }
+    .box .w .dis .number {
+        margin-top: 8px;
+    }
+    .box .w .price {
+        margin-top: 8px;
+    }
+    .box .w .sp {
+        margin-top: 8px;
+    }
+    .box .w .qua {
+        margin-top: 8px;
+        margin-bottom: 6px;
+    }
+    .box .w .na {
+        margin-bottom: 8px;
+    }
+    .box .w input {
+        width: 100px;
+        height: 20px;
+    }
+    .box .w #add {
+        width: 40px;
+        height: 20px;
+    }
+    .box .w .pd {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    .box .w #showmore {
+        margin-bottom: 8px;
+    }
+
+    /* footer */
+    .footer {
+        display: block;
+    }
+    .footer .w {
+        padding-top: 10px;
+    }
+    .copyright {
+        margin-right: 10px;
+    }
+    .copyright .app {
+        width: 80px;
+        height: 26px;
+        font-size: 10px;
+        line-height: 26px;
+    }
+    .links dl {
+        float: left;
+        margin-left: 2px;
+        margin-right: 6px;
+    }
+    .links dl dt {
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+    .links dl dd {
+        margin-top: 10px;
+        font-size: 9px;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 480px) */
+@media screen and (max-width: 479px) {
+    .w {
+        width: 308px;
+        margin: auto;
+    }
+    
+    /* topbar */
+    #topbar .content {
+        width: 308px;
+    }
+    #topbar .content ul {
+        width: 240px;
+        margin-right: 4px;
+        margin-top: 8px;
+    }
+    #topbar .content ul li a {
+        font-size: 12px;
+        line-height: 26px;
+        padding-left: 8px;
+    }
+    #topbar .content ul li span {
+        font-size: 12px;
+    }
+
+    /* searchbar */
+    .searchbar .w .dropdown_content {
+        min-width: 60px;
+    }
+    .searchbar input {
+        width: 256px;
+    }
+    .searchbar .search {
+        width: 48px;
+    }
+
+    /* item */
+    .box .w .picture {
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
+        margin-left: 53px;
+    }
+    .box .w .dis {
+        display: block;
+        width: 300px;
+        height: 260px;
+        padding-left: 0px;
+        margin-left: 6px;
+        margin-top: 20PX;
+    }
+    .box .w .dis .number {
+        font-size: 14px;
+        margin-top: 4px;
+    }
+    .box .w .price {
+        font-size: 12px;
+        margin-top: 4px;
+    }
+    .box .w .sp {
+        font-size: 12px;
+        margin-top: 4px;
+    }
+    .box .w .qua {
+        font-size: 12px;
+        margin-top: 4px;
+        margin-bottom: 3px;
+    }
+    .box .w .na {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+    .box .w input {
+        width: 80px;
+        height: 15px;
+    }
+    .box .w #add {
+        width: 30px;
+        height: 19px;
+    }
+    .box .w .pd {
+        font-size: 12px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    .box .w #showmore {
+        margin-bottom: 4px;
+    }
+    .box .w .dis #smd {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    /* footer */
+    .copyright {
+        margin-right: 10px;
+    }
+    .copyright .app {
+        width: 80px;
+        height: 26px;
+        font-size: 10px;
+        line-height: 26px;
+    }
+    .links dl {
+        display: none;
+        float: left;
+        margin-left: 2px;
+        margin-right: 6px;
+    }
+    .links dl dt {
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+    .links dl dd {
+        margin-top: 10px;
+        font-size: 9px;
+    }
+}
+
+
+
+
+
+
