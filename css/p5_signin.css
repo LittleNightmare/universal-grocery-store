@@ -112,7 +112,7 @@ p {
     border-radius: 5px;
     margin: 20px 10%;
 }
-.info a {
+.info .fp {
     display: block;
     margin-left: 10%;
     margin-bottom: 10px;
@@ -147,7 +147,7 @@ p {
     border-top: 1px solid lightgrey;
     margin-left: 10%;
 }
-.info a {
+.info .bt {
     display: block;
     font-size: 18px;
     width: 80%;
