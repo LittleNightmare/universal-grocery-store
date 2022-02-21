@@ -363,6 +363,7 @@ a, a:hover {
     border: 1px solid #fff;
     text-align: center;
     line-height: 33px;
+    margin-top: 10px;
 }
 .links {
     float: right;
