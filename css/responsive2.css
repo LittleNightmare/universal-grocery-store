@@ -230,24 +230,21 @@
     }
 
     /* footer */
+    .footer {
+        height: 200px;
+    }
     .copyright .app {
         width: 100px;
         height: 30px;
         font-size: 12px;
         line-height: 30px;
     }
+    .links {
+        float: right;
+    }
     .links dl {
         float: left;
-        margin-left: 30px;
-        margin-right: 20px;
-    }
-    .links dl dt {
-        font-size: 13px;
-        margin-bottom: 5px;
-    }
-    .links dl dd {
-        margin-top: 10px;
-        font-size: 12px;
+        margin-left: 0px;
     }
 }
 
@@ -387,27 +384,24 @@
     }
 
     /* footer */
-    .copyright {
-        margin-right: 10px;
+    .footer {
+        height: 60px;
+    }
+    .footer .w {
+        padding-top: 6px;
+    }
+    .copyright p {
+        font-size: 16px;
+        margin: 10px 0 10px 0;
     }
     .copyright .app {
-        width: 80px;
-        height: 26px;
-        font-size: 10px;
-        line-height: 26px;
+        display: none;
     }
-    .links dl {
-        float: left;
-        margin-left: 2px;
-        margin-right: 6px;
+    .copyright img {
+        display: none;
     }
-    .links dl dt {
-        font-size: 10px;
-        margin-bottom: 5px;
-    }
-    .links dl dd {
-        margin-top: 10px;
-        font-size: 9px;
+    .links {
+        display: none;
     }
 }
 
@@ -553,28 +547,24 @@
     }
     
     /* footer */
-    .copyright {
-        margin-right: 10px;
+    .footer {
+        height: 50px;
+    }
+    .footer .w {
+        padding-top: 6px;
+    }
+    .copyright p {
+        font-size: 12px;
+        margin: 10px 0 10px 0;
     }
     .copyright .app {
-        width: 80px;
-        height: 26px;
-        font-size: 10px;
-        line-height: 26px;
-    }
-    .links dl {
         display: none;
-        float: left;
-        margin-left: 2px;
-        margin-right: 6px;
     }
-    .links dl dt {
-        font-size: 10px;
-        margin-bottom: 5px;
+    .copyright img {
+        display: none;
     }
-    .links dl dd {
-        margin-top: 10px;
-        font-size: 9px;
+    .links {
+        display: none;
     }
 }
     
