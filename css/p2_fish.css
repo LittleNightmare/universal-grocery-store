@@ -1,0 +1,31 @@
+/* banner */
+.banner {
+    background-color: #0096FF;
+}
+
+.subnav ul li a {
+    color: #fff;
+}
+
+.ttl {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.ttl h2 {
+    color: #0096FF;
+}
+.ttl .pic {
+    background: url(../image/fish.jpg) no-repeat top center;
+}
+
+.special h2 {
+    color: #fff;
+    border-bottom: 2px solid #ff8800;
+} 
+
+.bd ul li {
+    padding-top: 16px;
+}
+.bd ul li a {
+    font-size: 13px;
+    color: #fff;
+}
