@@ -137,13 +137,16 @@
         margin-bottom: 20px;
     }
     .searchbar .w .dropdown_content {
-        min-width: 100px;
+        min-width: 100%;
+        background-color: grey;
     }
     .searchbar input {
         width: 398px;
+        margin-top: 212px;
     }
     .searchbar .search {
         width: 58px;
+        margin-top: 212px;
     }
 
     /* item */
@@ -250,13 +253,16 @@
 
     /* searchbar */
     .searchbar .w .dropdown_content {
-        min-width: 60px;
+        min-width: 100%;
+        background-color: grey;
     }
     .searchbar input {
         width: 256px;
+        margin-top: 220px;
     }
     .searchbar .search {
         width: 48px;
+        margin-top: 220px;
     }
 
     /* item */
