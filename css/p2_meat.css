@@ -1,0 +1,31 @@
+/* banner */
+.banner {
+    background-color: #FF2828;
+}
+
+.subnav ul li a {
+    color: #fff;
+}
+
+.ttl {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.ttl h2 {
+    color: #FF2828;
+}
+.ttl .pic {
+    background: url(../image/meat.jpg) no-repeat top center;
+}
+
+.special h2 {
+    color: #fff;
+    border-bottom: 2px solid #ff8800;
+} 
+
+.bd ul li {
+    padding-top: 16px;
+}
+.bd ul li a {
+    font-size: 13px;
+    color: #fff;
+}
