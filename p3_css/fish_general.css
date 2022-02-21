@@ -1,0 +1,16 @@
+#topbar {
+    background-color: grey;
+ }
+
+.searchbar .w .dropdown_content a {
+    color: #000;
+}
+
+.header .w {
+    background: url(../image/fishbanner.jpg) no-repeat top center;
+}
+
+/* footer */
+.footer {
+    background-color: blue;
+}
