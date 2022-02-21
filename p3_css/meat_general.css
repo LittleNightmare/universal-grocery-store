@@ -1,0 +1,16 @@
+#topbar {
+    background-color: #FF2828;
+ }
+
+.searchbar .w .dropdown_content a {
+    color: #000;
+}
+
+.header .w {
+    background: url(../image/meatbanner.jpg) no-repeat top center;
+}
+
+/* footer */
+.footer {
+    background-color: #FF2828;
+}
