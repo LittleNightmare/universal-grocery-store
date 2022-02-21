@@ -1,2 +1,3 @@
 # universal-grocery-store
-Comp 287 Project
+SOEN 287 Project
+HOST: https://users.encs.concordia.ca/~l_haoxua/universal-grocery-store/index.html
