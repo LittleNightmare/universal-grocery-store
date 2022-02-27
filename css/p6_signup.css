@@ -136,7 +136,7 @@ p {
     margin-top: 4px;
     margin-bottom: 20px;
 }
-.info #signup {
+.info button {
     display: block;
     font-size: 18px;
     width: 80%;
@@ -146,6 +146,11 @@ p {
     margin: 20px 10%;
     background-color: rgba(0, 0, 0, 0.2);
 }
+
+.info button:hover {
+    background-color: #808080;
+}
+
 .info .end {
     width: 80%;
     height: 4%;
