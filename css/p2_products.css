@@ -43,7 +43,7 @@ a {
 }
 #topbar .content ul {
     float: right;
-    width: 232px;
+    width: auto;
     margin-right: 10px;
 }
 #topbar .content ul li {

@@ -57,7 +57,7 @@ p {
 }
 #topbar .content ul {
     float: right;
-    width: 300px;
+    width: auto;
     margin-right: 16px;
 }
 .logo {

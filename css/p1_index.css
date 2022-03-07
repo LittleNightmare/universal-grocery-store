@@ -52,7 +52,7 @@ a, a:hover {
 }
 #topbar .content ul {
     float: right;
-    width: 232px;
+    width: auto;
 }
 #topbar .content ul li {
     float: left;
