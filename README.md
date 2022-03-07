@@ -1,6 +1,6 @@
 # universal-grocery-store
 SOEN 287 Project
 
-HOST: https://users.encs.concordia.ca/~l_haoxua/universal-grocery-store/index.html
+HOST: https://universal-grocery-store.littlenightmare.top/
 
-Back-end: https://users.encs.concordia.ca/~l_haoxua/universal-grocery-store/back-end/index.html
+Back-end: https://universal-grocery-store.littlenightmare.top/back-end/
