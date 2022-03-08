@@ -27,6 +27,9 @@ $(document).ready(function () {
 });
 
 function addChart(id, img, amount, price, name) {
+    amount = Number(amount);
+    price = Number(price);
+
     let cart = localStorage.getItem('Cart');
     if (cart) {
         cart = JSON.parse(cart);
