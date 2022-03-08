@@ -15,14 +15,11 @@ $(document).ready(function () {
         amount = $('#quan').val();
         var save = $("div em img");
 
-        if (save) {
-            var price_text = $('div.dis>h3.sp').text();
-            price = Number(price_text.substring(1).split('/')[0]);
-        } else {
-            var price_text = $('idv.dis>hs.price').text();
-            price = Number(price_text.substring(1).split('/')[0])
-        }
+        var price_text = $('div.dis>h3').text();
+        price = Number(price_text.substring(1).split('/')[0])
+
         name = $("div.dis>h1.name").text();
+        
         if (amount > 0) {
             addChart(id, img_path, amount, price, name);
         }
