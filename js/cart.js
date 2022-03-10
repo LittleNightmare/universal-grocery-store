@@ -1,5 +1,4 @@
-let products = [
-    {
+let items = [{
         name: "Lactantia",
         tag: "lactantia",
         price: 3.49,
@@ -199,3 +198,24 @@ let products = [
         img: "image/bbq-frankfurters.jpg",
     },
 ];
+// create new rows
+var header = cart - table.insertRow(0);
+var newLine = document.createElement("th");
+newLine.innerHTML = "Items";
+header.appendChild(newLine);
+
+var newLine = document.createElement("th");
+newLine.innerHTML = "Quantity";
+header.appendChild(newLine);
+
+var newLine = document.createElement("th");
+newLine.innerHTML = "Subtotal";
+header.appendChild(newLine);
+
+// cumulative item quantity
+var totalitems = document.getElementsByClassName("totalitems");
+var totalNum = localStorage.getItem("totalNum");
+if (!totalNum) {
+    totalNum = 0;
+}
+totalitems.innerHTML = totalNum;

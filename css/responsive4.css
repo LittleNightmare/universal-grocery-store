@@ -53,8 +53,12 @@
     }
     
     /* item-cart */
+    td img {
+        width: 26%;
+        height: 26%;
+    }
     .total-price {
-        height: 280px;
+        width: 35%;
     }
     .total-price .cs {
         height: 40px;
@@ -118,9 +122,22 @@
     }
 
     /* item-cart */
+    th {
+        font-size: 13px;
+    }
+    td img {
+        width: 38%;
+        height: 38%;
+    }
+    #dis {
+        margin: 0px 0px 0px 3px;
+    }
+    #dis p, h4 {
+        font-size: 13px;
+        font-weight:normal;
+    }
     .total-price {
-        width: 35%;
-        height: 236px;
+        width: 97%;
     }
     .total-price td{
         font-size: 12px;
@@ -202,8 +219,29 @@
     }
 
     /* item-cart */
+    td img {
+        width: 60%;
+        height: 60%;
+    }
+    td input {
+        width: 50px;
+        height: 20px;
+    }
+    #pri {
+        font-size: 13px;
+    }
+    #dis {
+        margin: 3px 0 0 0;
+    }
+    #dis p, h4 {
+        font-size: 13px;
+        font-weight:normal;
+    }
+    #quantity {
+        padding-top: 16px;
+    }
     .total-price {
-        height: 280px;
+        width: 96%;
     }
     .total-price .ea {
         width: 100%;

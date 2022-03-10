@@ -11,6 +11,9 @@
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="css/p4_cart.css">
     <link rel="stylesheet" href="css/responsive4.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/cart.js"></script>
 </head>
 
 <body>
@@ -52,13 +55,75 @@
 
     <!-- item cart -->
     <div class="bigbox clearfix">
-        <div class="cart-container w">
+        <div class="cart-container cart-page w">
             <table class="cart-table">
                 <thead>
                     <tr>
                         <th>Items</th>
                         <th>Quantity</th>
                         <th>Subtotal</th>
+                    </tr>
+                    <!-- fixed item1 -->
+                    <tr>
+                        <td>
+                            <div id="item">
+                                <img src="image/apples.JPG" alt="">
+                                <div id="dis">
+                                    <p>Gala Apples</p>
+                                    <h4>Price: $1.19/lb</h4>
+                                    <br>
+                                    <button>Remove</button>
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="quantity">
+                                <input type="number" value="2" onkeyup="changeQuantity('gala apples', this)" min="0">
+                            </div>
+                        </td>
+                        <td id="pri">$2.38</td>
+                    </tr>
+                    <!-- fixed item2 -->
+                    <tr>
+                        <td>
+                            <div id="item">
+                                <img src="image/cucumber.JPG" alt="">
+                                <div id="dis">
+                                    <p>Cucumbers</p>
+                                    <h4>Price: $1.99/lb</h4>
+                                    <br>
+                                    <button>Remove</button>
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="quantity">
+                                <input type="number" value="1" onkeyup="changeQuantity('gala apples', this)" min="0">
+                            </div>
+                        </td>
+                        <td id="pri">$1.99</td>
+                    </tr>
+                    <!-- fixed item3 -->
+                    <tr>
+                        <td>
+                            <div id="item">
+                                <img src="image/banana.JPG" alt="">
+                                <div id="dis">
+                                    <p>Bananas</p>
+                                    <h4>Price: $0.89/lb</h4>
+                                    <br>
+                                    <button>Remove</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="quantity">
+                                <input type="number" value="3" onkeyup="changeQuantity('gala apples', this)" min="0">
+                            </div>
+                        </td>
+                        <td id="pri">$2.67</td>
                     </tr>
                 </thead>
             </table>
@@ -86,7 +151,7 @@
                     </tr>
                 </table>
                 <button class="ea">Empty All</button>
-                <button class="cs">Continue Shopping</button>
+                <a href="index.html"><button class="cs">Continue Shopping</button></a>
                 <button class="checkout">Check Out</button>
             </div>
         </div>
@@ -124,7 +189,7 @@
             </div>
         </div>
     </div>
-    
+
 </body>
 
 </html>
