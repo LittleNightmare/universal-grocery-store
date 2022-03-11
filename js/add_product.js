@@ -22,6 +22,15 @@ $(document).ready(function () {
         
         if (amount > 0) {
             addChart(id, img_path, amount, price, name);
+            $(this).animate({
+                height: "50px",
+                width: "100px"
+              });
+            
+            $(this).animate({
+                height: "34px",
+                width: "60px"
+              });
         }
     })
 });
@@ -49,4 +58,4 @@ function addChart(id, img, amount, price, name) {
         var goodList = [good];
         localStorage.setItem('Cart', JSON.stringify(goodList));
     }
-}
+};

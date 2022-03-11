@@ -4,6 +4,6 @@ $(document).ready(function () {
 
     var button = $('#showmore');
     button.click(function () {
-        context.toggle();
+        context.slideToggle(200);
     });
 });
