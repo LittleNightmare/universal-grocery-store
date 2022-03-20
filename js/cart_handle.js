@@ -2,17 +2,64 @@ $(document).ready(function () {
     // first update summary
     updateSummary()
 
-    let cart = localStorage.getItem('Cart');
-    // if there is item in the cart
-    if (cart) {
-        // create ProductList
-        fillProductList();
-        $('tbody').on("blur", 'input', function () {
-            // update product list after change value
-            // $(this).parent().parent().parent() is current <tr>
-            updateQuality($(this).parent().parent().parent(), $(this).val());
-        });
-    }
+    // create ProductList
+    fillProductList();
+
+    // check box style
+    $('.cart-table').on("change",".checkall",function () {
+        // $(this).prop("checked");
+        $(".check").prop("checked", $(this).prop("checked"));
+        if ($(this).prop("checked")) {
+            // add class name check-cart-item
+            $(".p_item").addClass("check-cart-item");
+        } else {
+            $(".p_item").removeClass("check-cart-item");
+        }
+    });
+
+    $('.cart-table').on("change",".check",function () {
+        if ($(".check:checked").length === $(".check").length) {
+            $(".checkall").prop("checked", true);
+        } else {
+            $(".checkall").prop("checked", false);
+        }
+        if ($(this).prop("checked")) {
+            // add class name check-cart-item
+            $(this).parents(".p_item").addClass("check-cart-item");
+        } else {
+            $(this).parents(".p_item").removeClass("check-cart-item");
+        }
+    });
+
+    // update quality when .num change
+    $('.cart-table').on("change", ".num", function () {
+        // update product list after change value
+        // $(this).parent().parent().parent() is current <tr>
+        var n = $(this).val();
+        var p = $(this).parent().parent().siblings().children().children().children(".price").html();
+        p = String(p).substring(1, 4);
+        $(this).parent().parent().siblings(".pri").html('$' + (p * n).toFixed(2));
+        updateQuality($(this).parent().parent().parent(), $(this).val());
+    });
+    // handle click event after update elements
+    $('.cart-table').on("click", ".add", function () {
+        var n = $(this).siblings(".num").val();
+        n++;
+        $(this).siblings(".num").val(n);
+        $(this).siblings(".num").change();
+    });
+
+    $('.cart-table').on("click", ".min", function () {
+        var n = $(this).siblings(".num").val();
+        if (n == 1) {
+            return false;
+        }
+        n--;
+        $(this).siblings(".num").val(n);
+        $(this).siblings(".num").change();
+    });
+
+    
 
     //Empty All
     $('.total-price>button.ea').on("click", function () {
@@ -25,18 +72,24 @@ $(document).ready(function () {
     });
 
     //Remove button
-    $('tbody').on("click", 'button', function () {
+    $('.cart-table').on("click", 'button', function () {
         removeItem($(this).parent().find('p').text());
         updateSummary();
         clearProductList();
         if (localStorage.getItem("Cart")) {
             fillProductList();
         }
-    })
+        $(this).parent().parent().parent().parent().remove();
+    });
+
+
 });
 
 function fillProductList() {
     let cart = localStorage.getItem('Cart');
+    if (! (cart)){
+        return true;
+    }
     let table = $('.cart-table>tbody');
     JSON.parse(cart).forEach(i => {
         // add a new row(<tr>)
@@ -68,7 +121,9 @@ function newRow(img, name, price, amount) {
     var column2 = document.createElement('td');
     column2.innerHTML = `
     <div id="quantity">
-        <input type="number" value="${amount}"  min="0" >
+        <input class="min" name="" type="button" value="-">
+        <input class="num" name="num" type="text" value="${amount}">
+        <input class="add" name="" type="button" value="+">
     </div>
     `;
     var column3 = document.createElement('td');
@@ -88,7 +143,10 @@ function clearProductList() {
 function updateQuality(currentRow, newQuality) {
     let name = currentRow.find("#item>#dis>p").text();
     let cart = JSON.parse(localStorage.getItem('Cart'));
-
+    if (! (cart)){
+        return true;
+    }
+    // may not exist
     var change = false;
     cart.forEach(i => {
         if (i.name == name) {
