@@ -25,6 +25,15 @@ $(document).ready(function () {
         
         if (amount > 0) {
             addChart(id, img_path, amount, price, name);
+            // animate
+            var old_color = $(this).css("background-color");
+            var old_width = $(this).css("width");
+
+            $(this).css("background-color", "springgreen");
+            $(this).animate({width: "100px"},"fast");
+            $(this).animate({width: old_width},"slow", function(){
+                $(this).css("background-color", old_color);
+            });
         }
     });
 
@@ -108,11 +117,7 @@ function loadProductTemp(id){
         productTemp = JSON.parse(productTemp);
         if (productTemp[id]){
             return productTemp[id];
-        } else {
-            return 1;
         }
-        
-    } else {
-        return 1;
     }
+    return 1;
 }
