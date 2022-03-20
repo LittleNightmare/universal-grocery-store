@@ -37,7 +37,7 @@ $(document).ready(function () {
         }
     });
 
-    $(".num").change(function () {
+    $(".dis").on("change",".num",function () {
         var n = $(this).val();
         var price_text = $('div.dis>h3').text();
         price = Number(price_text.substring(1).split('/')[0]);
@@ -69,6 +69,7 @@ $(document).ready(function () {
     var id_text = $('div.dis>p.number').text();
     var id = id_text.split('#: ')[1];
     $(".num").val(Number(loadProductTemp(id)));
+    $(".num").change();
 
 })
 
