@@ -1,10 +1,13 @@
 $(document).ready(function () {
+    $("input.sub_total").attr("readonly","readonly");
+
+
     $('#add').click(function () {
-        var id = new String;
-        var img_path = new String;
-        var amount = new Number;
+        let id = new String;
+        let img_path = new String;
+        let amount = new Number;
         let price = new Number;
-        var name = new String;
+        let name = new String;
 
         var id_text = $('div.dis>p.number').text();
         id = id_text.split('#: ')[1];
@@ -16,7 +19,7 @@ $(document).ready(function () {
         var save = $("div em img");
 
         var price_text = $('div.dis>h3').text();
-        price = Number(price_text.substring(1).split('/')[0])
+        price = Number(price_text.substring(1).split('/')[0]);
 
         name = $("div.dis>h1.name").text();
         
@@ -25,13 +28,23 @@ $(document).ready(function () {
         }
     });
 
+    $(".num").change(function () {
+        var n = $(this).val();
+        var price_text = $('div.dis>h3').text();
+        price = Number(price_text.substring(1).split('/')[0]);
+        $(this).parent().siblings(".sub_total").val('$' + (price * n).toFixed(2));
+        
+        var id_text = $('div.dis>p.number').text();
+        var id = id_text.split('#: ')[1];
+        updateProductTemp(id, n);
+    });
+
+    
     $(".add").click(function () {
         var n = $(this).siblings(".num").val();
         n++;
         $(this).siblings(".num").val(n);
-        var p = $(this).parent().siblings(".price").html();
-        p = p.substr(1, 4);
-        $(this).parent().siblings(".sub_total").val('$' + (p * n).toFixed(2));
+        $(".num").change();
     });
 
     $(".min").click(function () {
@@ -41,17 +54,13 @@ $(document).ready(function () {
         }
         n--;
         $(this).siblings(".num").val(n);
-        var p = $(this).parent().siblings(".price").html();
-        p = p.substr(1, 4);
-        $(this).parent().siblings(".sub_total").val('$' + (p * n).toFixed(2));
+        $(".num").change();
     });
 
-    $(".num").change(function () {
-        var n = $(this).val();
-        var p = $(this).parent().siblings(".price").html();
-        p = p.substr(1, 4);
-        $(this).parent().siblings(".sub_total").val('$' + (p * n).toFixed(2));
-    });
+    var id_text = $('div.dis>p.number').text();
+    var id = id_text.split('#: ')[1];
+    $(".num").val(Number(loadProductTemp(id)));
+
 })
 
 function addChart(id, img, amount, price, name) {
@@ -67,7 +76,7 @@ function addChart(id, img, amount, price, name) {
                 v.amount = Number(v.amount) + Number(amount);
                 exist = true;
             }
-        })
+        });
         if (!exist) {
             cart.push({ id, img, amount, price, name });
         }
@@ -76,5 +85,34 @@ function addChart(id, img, amount, price, name) {
         var good = { id, img, amount, price, name };
         var goodList = [good];
         localStorage.setItem('Cart', JSON.stringify(goodList));
+    }
+}
+
+function updateProductTemp(id, amount){
+    amount = Number(amount);
+    let productTemp = localStorage.getItem('ProductTemp');
+    if(productTemp){
+        productTemp = JSON.parse(productTemp);
+        
+    } else {
+        productTemp = {};
+        
+    }
+    productTemp[id] = amount;
+    localStorage.setItem('ProductTemp', JSON.stringify(productTemp));
+}
+
+function loadProductTemp(id){
+    let productTemp = localStorage.getItem('ProductTemp');
+    if(productTemp){
+        productTemp = JSON.parse(productTemp);
+        if (productTemp[id]){
+            return productTemp[id];
+        } else {
+            return 1;
+        }
+        
+    } else {
+        return 1;
     }
 }
