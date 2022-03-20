@@ -11,9 +11,10 @@
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="css/p4_cart.css">
     <link rel="stylesheet" href="css/responsive4.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="js/cart.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/cart_handle.js"></script>
+    
+
 </head>
 
 <body>
@@ -59,73 +60,91 @@
             <table class="cart-table">
                 <thead>
                     <tr>
-                        <th>Items</th>
-                        <th>Quantity</th>
-                        <th>Subtotal</th>
+                        <th id="checkAll">
+                            <input class="checkall" type="checkbox" onclick="">
+                        </th>
+                        <th id="items">Items</th>
+                        <th id="qu">Quantity</th>
+                        <th id="subtt">Subtotal</th>
                     </tr>
                     <!-- fixed item1 -->
-                    <tr>
+                    <tr class="p_item">
+                        <td>
+                            <input class="check" type="checkbox">
+                        </td>
                         <td>
                             <div id="item">
                                 <img src="image/apples.JPG" alt="">
                                 <div id="dis">
                                     <p>Gala Apples</p>
-                                    <h4>Price: $1.19/lb</h4>
+                                    <h4 class="price">$1.19/lb</h4>
                                     <br>
-                                    <button>Remove</button>
-
+                                    <button class="remove">Remove</button>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div id="quantity">
-                                <input type="number" value="2" onkeyup="changeQuantity('gala apples', this)" min="0">
+                                <input class="min" name="" type="button" value="-">
+                                <input class="num" name="num" type="text" value="1">
+                                <input class="add" name="" type="button" value="+">
                             </div>
                         </td>
-                        <td id="pri">$2.38</td>
+                        <td class="pri">$1.19</td>
                     </tr>
                     <!-- fixed item2 -->
-                    <tr>
+                    <tr class="p_item">
+                        <td>
+                            <input class="check" type="checkbox">
+                        </td>
                         <td>
                             <div id="item">
                                 <img src="image/cucumber.JPG" alt="">
                                 <div id="dis">
                                     <p>Cucumbers</p>
-                                    <h4>Price: $1.99/lb</h4>
+                                    <h4 class="price">$1.99/lb</h4>
                                     <br>
-                                    <button>Remove</button>
+                                    <button class="remove">Remove</button>
 
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div id="quantity">
-                                <input type="number" value="1" onkeyup="changeQuantity('gala apples', this)" min="0">
+                                <input class="min" name="" type="button" value="-">
+                                <input class="num" name="num" type="text" value="1">
+                                <input class="add" name="" type="button" value="+">
                             </div>
                         </td>
-                        <td id="pri">$1.99</td>
+                        <td class="pri">$1.99</td>
                     </tr>
                     <!-- fixed item3 -->
-                    <tr>
+                    <tr class="p_item">
+                        <td>
+                            <input class="check" type="checkbox">
+                        </td>
                         <td>
                             <div id="item">
                                 <img src="image/banana.JPG" alt="">
                                 <div id="dis">
                                     <p>Bananas</p>
-                                    <h4>Price: $0.89/lb</h4>
+                                    <h4 class="price">$0.89/lb</h4>
                                     <br>
-                                    <button>Remove</button>
+                                    <button class="remove">Remove</button>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div id="quantity">
-                                <input type="number" value="3" onkeyup="changeQuantity('gala apples', this)" min="0">
+                                <input class="min" name="" type="button" value="-">
+                                <input class="num" name="num" type="text" value="1">
+                                <input class="add" name="" type="button" value="+">
                             </div>
                         </td>
-                        <td id="pri">$2.67</td>
+                        <td class="pri">$0.89</td>
                     </tr>
                 </thead>
+                <tbody></tbody>
             </table>
             <div class="total-price">
                 <table>

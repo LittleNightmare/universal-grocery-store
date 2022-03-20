@@ -1,221 +1,159 @@
-let items = [{
-        name: "Lactantia",
-        tag: "lactantia",
-        price: 3.49,
-        incart: 0,
-        img: "image/milk20.JPG",
-    },
+$(function () {
+    
+    $(".checkall").change(function () {
+        // $(this).prop("checked");
+        $(".check").prop("checked", $(this).prop("checked"));
+        if ($(this).prop("checked")) {
+            // add class name check-cart-item
+            $(".p_item").addClass("check-cart-item");
+        } else {
+            $(".p_item").removeClass("check-cart-item");
+        }
+    });
 
-    {
-        name: "Horizon",
-        tag: "horizon",
-        price: 4.29,
-        incart: 0,
-        img: "image/wholemilk.JPG",
-    },
+    $(".check").change(function () {
+        if ($(".check:checked").length === $(".check").length) {
+            $(".checkall").prop("checked", true);
+        } else {
+            $(".checkall").prop("checked", false);
+        }
+        if ($(this).prop("checked")) {
+            // add class name check-cart-item
+            $(this).parents(".p_item").addClass("check-cart-item");
+        } else {
+            $(this).parents(".p_item").removeClass("check-cart-item");
+        }
+    });
 
-    {
-        name: "Parmalat",
-        tag: "parmalat",
-        price: 4.99,
-        incart: 0,
-        img: "image/milk2.JPG",
-    },
+    $(".add").click(function () {
+        var n = $(this).siblings(".num").val();
+        n++;
+        $(this).siblings(".num").val(n);
+        var p = $(this).parent().parent().siblings().children().children().children(".price").html();
+        p = p.substr(1, 4);
+        $(this).parent().parent().siblings(".pri").html('$' + (p * n).toFixed(2));
+        getSum();
+    });
 
-    {
-        name: "Nestle Yogurt",
-        tag: "nestle yogurt",
-        price: 3.29,
-        incart: 0,
-        img: "image/yogurt2.JPG",
-    },
+    $(".min").click(function () {
+        var n = $(this).siblings(".num").val();
+        if (n == 1) {
+            return false;
+        }
+        n--;
+        $(this).siblings(".num").val(n);
+        var p = $(this).parent().parent().siblings().children().children().children(".price").html();
+        p = p.substr(1, 4);
+        $(this).parent().parent().siblings(".pri").html('$' + (p * n).toFixed(2));
+        getSum();
+    });
 
-    {
-        name: "Organic Eggs",
-        tag: "organic eggs",
-        price: 3.99,
-        incart: 0,
-        img: "image/eggs.JPG",
-    },
+    $(".num").change(function () {
+        var n = $(this).val();
+        var p = $(this).parent().parent().siblings().children().children().children(".price").html();
+        p = p.substr(1, 4);
+        $(this).parent().parent().siblings(".pri").html('$' + (p * n).toFixed(2));
+        getSum();
+    });
+    getSum();
 
-    {
-        name: "Gala apples",
-        tag: "gala apples",
-        price: 1.19,
-        incart: 0,
-        img: "image/apples.JPG",
-    },
+    // total items and subtotal
+    function getSum() {
+        var count = 0;
+        var price = 0;
+        $(".num").each(function (i, ele) {
+            count += parseInt($(ele).val());
+        });
+        $(".totalitems").text(count);
+        $(".pri").each(function (i, ele) {
+            price += parseFloat($(ele).text().substr(1));
+        });
+        $(".subtotal").text("$" + price.toFixed(2));
+    }
+    // remove items
+    $(".remove").click(function () {
+        $(this).parents(".p_item").remove();
+        getSum();
+    });
 
-    {
-        name: "Oranges",
-        tag: "oranges",
-        price: 1.29,
-        incart: 0,
-        img: "image/orange.JPG",
-    },
+    // remove all
+    $(".ea").click(function () {
+        $(".p_item").remove();
+        getSum();
+    });
 
-    {
-        name: "Limes",
-        tag: "limes",
-        price: 2.99,
-        incart: 0,
-        img: "image/lime.JPG",
-    },
+    function fillProductList() {
+        let cart = localStorage.getItem('Cart');
+        let table = $('.cart-table>tbody');
+        JSON.parse(cart).forEach(i => {
+            // add a new row(<tr>)
+            var row = newRow(i.img, i.name, i.price, i.amount);
+            table.append(row);
+        })
+    };
 
-    {
-        name: "Bananas",
-        tag: "bananas",
-        price: 0.89,
-        incart: 0,
-        img: "image/banana.JPG",
-    },
+    function newRow(img, name, price, amount) {
+        var row = document.createElement('tr');
+        // create 4 <td>s separately
+        var column0 = document.createElement('td');
+        column1.innerHTML = `
+        <input class="check" type="checkbox">
+        `;
+        var column1 = document.createElement('td');
+        column1.innerHTML = `
+        <div id="item">
+        <img src="${img}" alt="">
+            <div id="dis">
+                <p>${name}</p>
+                <h4>Price: $${price}/each</h4>
+                <br>
+                <button>Remove</button>
+            </div>
+        </div>
+        `;
+        var column2 = document.createElement('td');
+        column2.innerHTML = `
+        <div id="quantity">
+            <input type="number" value="${amount}"  min="0" >
+        </div>
+        `;
+        var column3 = document.createElement('td');
+        column3.id = 'pri';
+        column3.innerHTML = "$" + price * 100 * amount / 100;
+        row.appendChild(column0);
+        row.appendChild(column1);
+        row.appendChild(column2);
+        row.appendChild(column3);
+        return row;
+    };
 
-    {
-        name: "Peaches",
-        tag: "peaches",
-        price: 2.99,
-        incart: 0,
-        img: "image/peach.JPG",
-    },
+    function updateSummary() {
+        let cart = localStorage.getItem('Cart');
+        let totalItem = 0;
+        let subTotal = 0;
+        let QST = 0;
+        let GST = 0;
+        let total = 0;
+    
+        if (cart) {
+            cart = JSON.parse(cart);
+            cart.forEach(function (good) {
+                totalItem = Number(totalItem) + Number(good.amount);
+                subTotal = Number(subTotal) + Number(good.price) * 100 * Number(good.amount);
+            });
+    
+            subTotal = subTotal / 100;
+            QST = parseFloat(((subTotal * 100) * 9975 / 100000 / 100).toPrecision(12)).toFixed(2);
+            GST = parseFloat((subTotal * 100 * 5 / 10000).toPrecision(12)).toFixed(2);
+            total = parseFloat((subTotal + Number(QST) + Number(GST)).toPrecision(12));
+        }
+        // write in page
+        let summary = $('.total-price>table');
+        summary.find('.totalitems').text(totalItem);
+        summary.find('.subtotal').text(subTotal);
+        summary.find('.qst').text(QST);
+        summary.find('.gst').text(GST);
+        summary.find('.total').text(total);
+    };
 
-    {
-        name: "Tomatoes",
-        tag: "tomatoes",
-        price: 1.29,
-        incart: 0,
-        img: "image/tomato.JPG",
-    },
-
-    {
-        name: "Cauliflower",
-        tag: "cauliflower",
-        price: 2.29,
-        incart: 0,
-        img: "image/chou.JPG",
-    },
-
-    {
-        name: "Sweet Corns",
-        tag: "sweet corns",
-        price: 3.99,
-        incart: 0,
-        img: "image/corn.JPG",
-    },
-
-    {
-        name: "Potatoes",
-        tag: "potatoes",
-        price: 0.89,
-        incart: 0,
-        img: "image/potato.JPG",
-    },
-
-    {
-        name: "Cucumbers",
-        tag: "cucumbers",
-        price: 1.99,
-        incart: 0,
-        img: "image/cucumber.JPG",
-    },
-
-    {
-        name: "Atlantic Salmon",
-        tag: "atlantic salmon",
-        price: 6.49,
-        incart: 0,
-        img: "image/atlanticsalmon.webp",
-    },
-
-    {
-        name: "Pacific Salmon",
-        tag: "pacific salmon",
-        price: 7.29,
-        incart: 0,
-        img: "image/pacificsalmon.jfif",
-    },
-
-    {
-        name: "Cod",
-        tag: "cod",
-        price: 4.99,
-        incart: 0,
-        img: "image/cod.jfif",
-    },
-
-    {
-        name: "Catfish",
-        tag: "catfish",
-        price: 3.29,
-        incart: 0,
-        img: "image/catfish.jfif",
-    },
-
-    {
-        name: "Haddock",
-        tag: "haddock",
-        price: 3.99,
-        incart: 0,
-        img: "image/haddock.jfif",
-    },
-
-    {
-        name: "Frozen Tourtiere Pie",
-        tag: "frozen tourtiere pie",
-        price: 6.49,
-        incart: 0,
-        img: "image/frozen_tourtiere_pie.jpg",
-    },
-
-    {
-        name: "33% Less Salt Bacon",
-        tag: "33% less salt bacon",
-        price: 7.29,
-        incart: 0,
-        img: "image/33-less-salt-bacon.jpg",
-    },
-
-    {
-        name: "Bacon",
-        tag: "bacon",
-        price: 4.99,
-        incart: 0,
-        img: "image/bacon.jpg",
-    },
-
-    {
-        name: "Bacon Cheddar Sausage",
-        tag: "bacon cheddar sausage",
-        price: 4.29,
-        incart: 0,
-        img: "image/bacon-cheddar-sausage.jpg",
-    },
-
-    {
-        name: "BBQ Frankfurters",
-        tag: "bbq frankfurters",
-        price: 4.99,
-        incart: 0,
-        img: "image/bbq-frankfurters.jpg",
-    },
-];
-// create new rows
-var header = cart - table.insertRow(0);
-var newLine = document.createElement("th");
-newLine.innerHTML = "Items";
-header.appendChild(newLine);
-
-var newLine = document.createElement("th");
-newLine.innerHTML = "Quantity";
-header.appendChild(newLine);
-
-var newLine = document.createElement("th");
-newLine.innerHTML = "Subtotal";
-header.appendChild(newLine);
-
-// cumulative item quantity
-var totalitems = document.getElementsByClassName("totalitems");
-var totalNum = localStorage.getItem("totalNum");
-if (!totalNum) {
-    totalNum = 0;
-}
-totalitems.innerHTML = totalNum;
+})
