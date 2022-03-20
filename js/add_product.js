@@ -28,9 +28,9 @@ $(document).ready(function () {
             // animate
             var old_color = $(this).css("background-color");
             var old_width = $(this).css("width");
-
+            var new_width = String(Number(old_width.split("px")[0])+20)+"px";
             $(this).css("background-color", "springgreen");
-            $(this).animate({width: "100px"},"fast");
+            $(this).animate({width: new_width},"fast");
             $(this).animate({width: old_width},"slow", function(){
                 $(this).css("background-color", old_color);
             });
