@@ -196,21 +196,39 @@ p {
     margin-top: 16px;
 }
 .box .w .qua {
-    margin-top: 16px;
-    margin-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 22px;
+    margin-bottom: 12px;
+}
+.box .w .p {
+    padding-top: 12px;
+    margin-top: 22px;
+    margin-bottom: 12px;
 }
 .box .w .na {
     margin-bottom: 16px;
 }
-.box .w input {
-    width: 200px;
-    height: 30px;
+.box .w .min,.num,.add {
+    float: left;
 }
+.min,
+.add {
+    width: 50px;
+    height: 32px;
+}
+.num {
+    width: 80px;
+    text-align: center;
+    height: 28px;
+}
+
 .box .w #add {
-    width: 60px;
-    height: 34px;
+    width: 100px;
+    height: 32px;
+    margin-left: 2px;
 }
 .box .w .pd {
+    margin-top: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -218,6 +236,15 @@ p {
     width: 80px;
     height: 26px;
     margin-bottom: 10px;
+}
+.na {
+    display: inline;
+    width: 50px;
+    height: 40px;
+}
+.sub_total {
+    width: 180px;
+    height: 28px;
 }
 
 /* footer */

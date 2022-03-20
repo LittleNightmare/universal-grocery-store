@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +10,12 @@
     <link rel="stylesheet" href="../p3_css/base_general.css">
     <link rel="stylesheet" href="../p3_css/milk_general.css">
     <link rel="stylesheet" href="../css/responsive3.css">
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="../js/show_more.js"></script>
+
+    <script src="../js/jquery.min.js"></script>
     <script src="../js/add_product.js"></script>
+    <script src="../js/show_more.js"></script>
 </head>
+
 <body>
     <!-- topbar -->
     <div id="topbar">
@@ -62,24 +64,34 @@
                 <p class="number">Item #: 000006</p>
                 <h2 class="tag">2% Milk</h2>
                 <h3 class="price">$3.49/each</h3>
-                <p class="qua">Quantity:</p>
-                <p id="rt">Added to shopping cart!</p>
+                <p class="qua">Quantity</p>
                 <div class="na">
-                    <input type="number" id="quan" />
-                    <button id="add" onclick="addQuantity('lactantia', this)"> Add </button>
-                    <span id="tt"></span>
+                    <input class="min" name="" type="button" value="-">
+                    <input class="num" name="num" type="text" value="1">
+                    <input class="add" name="" type="button" value="+">
                 </div>
                 <br>
-                <hr/>
+                <p class="p">Price</p>
+                <input class="sub_total" type="text" value="$3.49">
+                <button id="add"> Add to Cart </button>
                 <h2 class="pd">Product Details</h2>
                 <button id="showmore"> show more</button>
-                <p id="smd">The calcium content of 100 grams of yogurt is 118 mg, 
-                    while the calcium content of the same portion of milk is 104 mg, 
-                    making the calcium content of yogurt slightly higher than that 
+                <p id="smd">The calcium content of 100 grams of yogurt is 118 mg,
+                    while the calcium content of the same portion of milk is 104 mg,
+                    making the calcium content of yogurt slightly higher than that
                     of milk.</p>
             </div>
         </div>
     </div>
+    <!-- <script>
+        var showmore = document.querySelector('#showmore');
+        var smd = document.querySelector('#smd');
+        smd.style.display = 'none';
+
+        showmore.onclick = function () {
+            smd.style.display = 'block';
+        }
+    </script> -->
 
     <!-- footer -->
     <div class="footer">
@@ -117,4 +129,5 @@
         </div>
     </div>
 </body>
+
 </html>

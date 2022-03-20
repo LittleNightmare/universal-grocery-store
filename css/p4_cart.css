@@ -218,17 +218,33 @@ table {
 }
 
 th {
-    width: 40%;
-    text-align: left;
     line-height: 35px;
+    text-align: left;
     font-weight: 700;
     padding: 6px;
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+#checkAll {
+    width: 10%;
+}
+
+#items {
+    width: 40%;
+}
+
+#qu {
+    width: 30%;
+}
+
+#subtt {
+    width: 20%;
+}
+
 td {
     padding: 6px;
 }
+
 td a {
     color: #000;
     font-size: 12px;
@@ -238,22 +254,49 @@ td img {
     width: 20%;
     height: 20%;
 }
+
 td input {
-    width: 60px;
-    height: 30px;
+    width: 40px;
+    height: 25px;
 }
+
+.check,
+.checkall {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
 #item {
     display: flex;
     flex-wrap: wrap;
 }
+
 #dis {
     margin: 0px 16px;
 }
+
 #quantity {
+    display: inline;
     width: 50px;
     height: 40px;
 }
 
+.min,
+.num,
+.add {
+    float: left;
+}
+
+.min,
+.add {
+    height: 29px;
+}
+
+.num {
+    text-align: center;
+}
 
 .total-price {
     float: right;
@@ -270,11 +313,10 @@ td input {
     width: 100%;
     max-width: 30%;
 }
-
 .total-price table tr td {
+    width: 100%;
     padding-top: 10px;
 }
-
 .total-price .ea {
     float: left;
     width: 49%;
@@ -314,6 +356,9 @@ td input {
 
 .total-price .checkout:hover {
     background-color: #ff8800;
+}
+.check-cart-item {
+    background-color: #fff4e8;
 }
 
 /* footer */

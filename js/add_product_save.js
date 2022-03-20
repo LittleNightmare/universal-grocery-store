@@ -29,7 +29,7 @@ $(document).ready(function () {
         var n = $(this).siblings(".num").val();
         n++;
         $(this).siblings(".num").val(n);
-        var p = $(this).parent().siblings(".price").html();
+        var p = $(this).parent().siblings(".sp").html();
         p = p.substr(1, 4);
         $(this).parent().siblings(".sub_total").val('$' + (p * n).toFixed(2));
     });
@@ -41,14 +41,14 @@ $(document).ready(function () {
         }
         n--;
         $(this).siblings(".num").val(n);
-        var p = $(this).parent().siblings(".price").html();
+        var p = $(this).parent().siblings(".sp").html();
         p = p.substr(1, 4);
         $(this).parent().siblings(".sub_total").val('$' + (p * n).toFixed(2));
     });
 
     $(".num").change(function () {
         var n = $(this).val();
-        var p = $(this).parent().siblings(".price").html();
+        var p = $(this).parent().siblings(".sp").html();
         p = p.substr(1, 4);
         $(this).parent().siblings(".sub_total").val('$' + (p * n).toFixed(2));
     });

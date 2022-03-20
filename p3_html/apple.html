@@ -12,7 +12,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="../js/show_more.js"></script>
-    <script src="../js/add_product.js"></script>
+    <script src="../js/add_product_save.js"></script>
 </head>
 
 <body>
@@ -66,13 +66,18 @@
                 <p class="number">Item #: 000001</p>
                 <h2 class="price">$2.29/lb</h2>
                 <h3 class="sp">$1.19/lb</h3>
-                <p class="qua">Quantity:</p>
+                <p class="qua">Quantity</p>
                 <div class="na">
-                    <input type="number" id="quan" />
-                    <button id="add"> Add </button>
+                    <input class="min" name="" type="button" value="-">
+                    <input class="num" name="num" type="text" value="1">
+                    <input class="add" name="" type="button" value="+">
+                    <!-- <input type="number" id="quan" /> -->
+                    
                 </div>
                 <br>
-                <hr/>
+                <p class="p">Price</p>
+                <input class="sub_total" type="text" value="$1.19">
+                <button id="add"> Add to Cart</button>
                 <h2 class="pd">Product Details</h2>
                 <button id="showmore"> show more</button>
                 <p id="smd">Gala apples provide vitamin C to strengthen the immune system and
