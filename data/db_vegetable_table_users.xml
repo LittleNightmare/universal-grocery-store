@@ -1,0 +1,18 @@
+        <!-- 表 users -->
+        <table name="users">
+            <column name="id">104</column>
+            <column name="username">1@qq.com</column>
+            <column name="password">123456</column>
+            <column name="FirstName">11111111</column>
+            <column name="LastName">11111111</column>
+            <column name="Gender">Male</column>
+            <column name="Phone">123546111</column>
+            <column name="Address1">11111</column>
+            <column name="Address2">11111</column>
+            <column name="Country">美国</column>
+            <column name="State">New York</column>
+            <column name="City">CANANDAIGUA</column>
+            <column name="zip">1111</column>
+            <column name="receive">0</column>
+            <column name="time">2022-04-13 04:10:06</column>
+        </table>

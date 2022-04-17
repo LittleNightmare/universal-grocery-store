@@ -25,21 +25,13 @@ $(document).ready(function () {
         
         if (amount > 0) {
             addChart(id, img_path, amount, price, name);
-            // animate
-            var old_color = $(this).css("background-color");
-            var old_width = $(this).css("width");
-            var new_width = String(Number(old_width.split("px")[0])+20)+"px";
-            $(this).css("background-color", "springgreen");
-            $(this).animate({width: new_width},"fast");
-            $(this).animate({width: old_width},"slow", function(){
-                $(this).css("background-color", old_color);
-            });
         }
     });
 
-    $(".dis").on("change",".num",function () {
+    $(".num").change(function () {
         var n = $(this).val();
-        var price_text = $('div.dis>h3').text();
+        var price_text = $('div.dis h3.sp').text();
+        console.log(price_text);
         price = Number(price_text.substring(1).split('/')[0]);
         $(this).parent().siblings(".sub_total").val('$' + (price * n).toFixed(2));
         
@@ -50,7 +42,9 @@ $(document).ready(function () {
 
     
     $(".add").click(function () {
+   
         var n = $(this).siblings(".num").val();
+     
         n++;
         $(this).siblings(".num").val(n);
         $(".num").change();
@@ -69,56 +63,59 @@ $(document).ready(function () {
     var id_text = $('div.dis>p.number').text();
     var id = id_text.split('#: ')[1];
     $(".num").val(Number(loadProductTemp(id)));
-    $(".num").change();
 
 })
 
-function addChart(id, img, amount, price, name) {
-    amount = Number(amount);
-    price = Number(price);
+// function addChart(id, img, amount, price, name) {
+//     amount = Number(amount);
+//     price = Number(price);
 
-    let cart = localStorage.getItem('Cart');
-    if (cart) {
-        cart = JSON.parse(cart);
-        let exist = false;
-        cart.forEach(v => {
-            if (v.id == id) {
-                v.amount = Number(v.amount) + Number(amount);
-                exist = true;
-            }
-        });
-        if (!exist) {
-            cart.push({ id, img, amount, price, name });
-        }
-        localStorage.setItem('Cart', JSON.stringify(cart));
-    } else {
-        var good = { id, img, amount, price, name };
-        var goodList = [good];
-        localStorage.setItem('Cart', JSON.stringify(goodList));
-    }
-}
+//     let cart = localStorage.getItem('Cart');
+//     if (cart) {
+//         cart = JSON.parse(cart);
+//         let exist = false;
+//         cart.forEach(v => {
+//             if (v.id == id) {
+//                 v.amount = Number(v.amount) + Number(amount);
+//                 exist = true;
+//             }
+//         });
+//         if (!exist) {
+//             cart.push({ id, img, amount, price, name });
+//         }
+//         localStorage.setItem('Cart', JSON.stringify(cart));
+//     } else {
+//         var good = { id, img, amount, price, name };
+//         var goodList = [good];
+//         localStorage.setItem('Cart', JSON.stringify(goodList));
+//     }
+// }
 
-function updateProductTemp(id, amount){
-    amount = Number(amount);
-    let productTemp = localStorage.getItem('ProductTemp');
-    if(productTemp){
-        productTemp = JSON.parse(productTemp);
+// function updateProductTemp(id, amount){
+//     amount = Number(amount);
+//     let productTemp = localStorage.getItem('ProductTemp');
+//     if(productTemp){
+//         productTemp = JSON.parse(productTemp);
         
-    } else {
-        productTemp = {};
+//     } else {
+//         productTemp = {};
         
-    }
-    productTemp[id] = amount;
-    localStorage.setItem('ProductTemp', JSON.stringify(productTemp));
-}
+//     }
+//     productTemp[id] = amount;
+//     localStorage.setItem('ProductTemp', JSON.stringify(productTemp));
+// }
 
-function loadProductTemp(id){
-    let productTemp = localStorage.getItem('ProductTemp');
-    if(productTemp){
-        productTemp = JSON.parse(productTemp);
-        if (productTemp[id]){
-            return productTemp[id];
-        }
-    }
-    return 1;
-}
+// function loadProductTemp(id){
+//     let productTemp = localStorage.getItem('ProductTemp');
+//     if(productTemp){
+//         productTemp = JSON.parse(productTemp);
+//         if (productTemp[id]){
+//             return productTemp[id];
+//         } else {
+//             return 1;
+//         }
+        
+//     } else {
+//         return 1;
+//     }
+// }

@@ -29,9 +29,9 @@ $(function () {
         var n = $(this).siblings(".num").val();
         n++;
         $(this).siblings(".num").val(n);
-        var p = $(this).parent().parent().siblings().children().children().children(".price").html();
+        var p = $(this).parent().parent().siblings().children().children().children(".price").php();
         p = p.substr(1, 4);
-        $(this).parent().parent().siblings(".pri").html('$' + (p * n).toFixed(2));
+        $(this).parent().parent().siblings(".pri").php('$' + (p * n).toFixed(2));
         getSum();
     });
 
@@ -42,17 +42,17 @@ $(function () {
         }
         n--;
         $(this).siblings(".num").val(n);
-        var p = $(this).parent().parent().siblings().children().children().children(".price").html();
+        var p = $(this).parent().parent().siblings().children().children().children(".price").php();
         p = p.substr(1, 4);
-        $(this).parent().parent().siblings(".pri").html('$' + (p * n).toFixed(2));
+        $(this).parent().parent().siblings(".pri").php('$' + (p * n).toFixed(2));
         getSum();
     });
 
     $(".num").change(function () {
         var n = $(this).val();
-        var p = $(this).parent().parent().siblings().children().children().children(".price").html();
+        var p = $(this).parent().parent().siblings().children().children().children(".price").php();
         p = p.substr(1, 4);
-        $(this).parent().parent().siblings(".pri").html('$' + (p * n).toFixed(2));
+        $(this).parent().parent().siblings(".pri").php('$' + (p * n).toFixed(2));
         getSum();
     });
     getSum();

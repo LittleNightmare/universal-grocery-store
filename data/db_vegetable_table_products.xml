@@ -1,0 +1,103 @@
+        <!-- 表 products -->
+        <table name="products">
+            <column name="id">30</column>
+            <column name="type">Fruits</column>
+            <column name="name">Avocados</column>
+            <column name="discount">0</column>
+            <column name="price">4.99</column>
+            <column name="photo">upimages/220417122422.JPG</column>
+            <column name="detail">Avocado is rich in vitamins A, E and B2, which are good for the eyes; 
+                    it is also rich in unsaturated fat, which is very helpful in reducing the 
+                    occurrence of cardiovascular diseases.</column>
+            <column name="amount">269</column>
+        </table>
+        <table name="products">
+            <column name="id">20</column>
+            <column name="type">Fruits</column>
+            <column name="name">Gala Apples</column>
+            <column name="discount">1</column>
+            <column name="price">2.29</column>
+            <column name="photo">upimages/20220413131254apples.JPG</column>
+            <column name="detail">Gala ApplesGala ApplesGala ApplesGala ApplesGala Apples</column>
+            <column name="amount">21</column>
+        </table>
+        <table name="products">
+            <column name="id">21</column>
+            <column name="type">Fruits</column>
+            <column name="name">Bananas</column>
+            <column name="discount">1</column>
+            <column name="price">1.29</column>
+            <column name="photo">upimages/20220413131210banana.JPG</column>
+            <column name="detail">BananasBananasBananasBananasBananasBananasBananasBananasBananasBananasBananasBananasBananasBananasBananasBananas</column>
+            <column name="amount">21</column>
+        </table>
+        <table name="products">
+            <column name="id">22</column>
+            <column name="type">Vegetables</column>
+            <column name="name">Sweet Corns</column>
+            <column name="discount">1</column>
+            <column name="price">4.99</column>
+            <column name="photo">upimages/20220413131122corn.JPG</column>
+            <column name="detail">Sweet CornsSweet CornsSweet CornsSweet CornsSweet CornsSweet CornsSweet Corns</column>
+            <column name="amount">21</column>
+        </table>
+        <table name="products">
+            <column name="id">25</column>
+            <column name="type">Meat</column>
+            <column name="name">Frozen Tourtiere Pie</column>
+            <column name="discount">1</column>
+            <column name="price">6.49</column>
+            <column name="photo">upimages/20220413131418frozen_tourtiere_pie.jpg</column>
+            <column name="detail">Frozen Tourtiere PieFrozen Tourtiere PieFrozen Tourtiere PieFrozen Tourtiere PieFrozen Tourtiere Pie</column>
+            <column name="amount">21</column>
+        </table>
+        <table name="products">
+            <column name="id">26</column>
+            <column name="type">Meat</column>
+            <column name="name">33% Less Salt Bacon</column>
+            <column name="discount">1</column>
+            <column name="price">7.29</column>
+            <column name="photo">upimages/2022041313154933-less-salt-bacon.jpg</column>
+            <column name="detail">33% Less Salt Bacon33% Less Salt Bacon33% Less Salt Bacon33% Less Salt Bacon</column>
+            <column name="amount">21</column>
+        </table>
+        <table name="products">
+            <column name="id">27</column>
+            <column name="type">Fish</column>
+            <column name="name">Atlantic Salmon</column>
+            <column name="discount">1</column>
+            <column name="price">100</column>
+            <column name="photo">upimages/20220413131849413211700.jpg</column>
+            <column name="detail">Atlantic SalmonAtlantic SalmonAtlantic SalmonAtlantic SalmonAtlantic Salmon</column>
+            <column name="amount">21</column>
+        </table>
+        <table name="products">
+            <column name="id">28</column>
+            <column name="type">MilkEggs</column>
+            <column name="name">Lactantia</column>
+            <column name="discount">1</column>
+            <column name="price">3.49</column>
+            <column name="photo">upimages/220413012235.png</column>
+            <column name="detail">LactantiaLactantiaLactantiaLactantiaLactantiaLactantiaLactantiaLactantiaLactantia</column>
+            <column name="amount">21</column>
+        </table>
+        <table name="products">
+            <column name="id">29</column>
+            <column name="type">Fish</column>
+            <column name="name">Pacific Salmon</column>
+            <column name="discount">1</column>
+            <column name="price">7.29</column>
+            <column name="photo">upimages/220413012324.jfif</column>
+            <column name="detail">Pacific SalmonPacific SalmonPacific SalmonPacific Salmon</column>
+            <column name="amount">21</column>
+        </table>
+        <table name="products">
+            <column name="id">31</column>
+            <column name="type">MilkEggs</column>
+            <column name="name">Eggs</column>
+            <column name="discount">0.75</column>
+            <column name="price">5.99</column>
+            <column name="photo">upimages/220417122956.JPG</column>
+            <column name="detail">a group of eggs</column>
+            <column name="amount">123</column>
+        </table>

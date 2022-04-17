@@ -1,0 +1,19 @@
+        <!-- 表 orderlist -->
+        <table name="orderlist">
+            <column name="id">26</column>
+            <column name="username">123456</column>
+            <column name="gid">20@18@</column>
+            <column name="num">1@1@</column>
+            <column name="total">180</column>
+            <column name="flag">1</column>
+            <column name="time">2022-04-13 21:04:18</column>
+        </table>
+        <table name="orderlist">
+            <column name="id">25</column>
+            <column name="username">123456</column>
+            <column name="gid">20@</column>
+            <column name="num">1@</column>
+            <column name="total">90</column>
+            <column name="flag">2</column>
+            <column name="time">2022-04-13 20:48:23</column>
+        </table>

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // first update summary
-    updateSummary()
+    // updateSummary()
 
     // create ProductList
     fillProductList();
@@ -36,9 +36,9 @@ $(document).ready(function () {
         // update product list after change value
         // $(this).parent().parent().parent() is current <tr>
         var n = $(this).val();
-        var p = $(this).parent().parent().siblings().children().children().children(".price").html();
+        var p = $(this).parent().parent().siblings().children().children().children(".price").php();
         p = String(p).substring(1, 4);
-        $(this).parent().parent().siblings(".pri").html('$' + (p * n).toFixed(2));
+        $(this).parent().parent().siblings(".pri").php('$' + (p * n).toFixed(2));
         updateQuality($(this).parent().parent().parent(), $(this).val());
     });
     // handle click event after update elements
@@ -161,38 +161,38 @@ function updateQuality(currentRow, newQuality) {
         localStorage.setItem('Cart', JSON.stringify(cart));
         clearProductList();
         fillProductList();
-        updateSummary();
+        // updateSummary();
     }
 };
 
-function updateSummary() {
-    let cart = localStorage.getItem('Cart');
-    let totalItem = 0;
-    let subTotal = 0;
-    let QST = 0;
-    let GST = 0;
-    let total = 0;
+// function updateSummary() {
+//     let cart = localStorage.getItem('Cart');
+//     let totalItem = 0;
+//     let subTotal = 0;
+//     let QST = 0;
+//     let GST = 0;
+//     let total = 0;
 
-    if (cart) {
-        cart = JSON.parse(cart);
-        cart.forEach(function (good) {
-            totalItem = Number(totalItem) + Number(good.amount);
-            subTotal = Number(subTotal) + Number(good.price) * 100 * Number(good.amount);
-        });
+//     if (cart) {
+//         cart = JSON.parse(cart);
+//         cart.forEach(function (good) {
+//             totalItem = Number(totalItem) + Number(good.amount);
+//             subTotal = Number(subTotal) + Number(good.price) * 100 * Number(good.amount);
+//         });
 
-        subTotal = subTotal / 100;
-        QST = parseFloat(((subTotal * 100) * 9975 / 100000 / 100).toPrecision(12)).toFixed(2);
-        GST = parseFloat((subTotal * 100 * 5 / 10000).toPrecision(12)).toFixed(2);
-        total = parseFloat((subTotal + Number(QST) + Number(GST)).toPrecision(12));
-    }
-    // write in page
-    let summary = $('.total-price>table');
-    summary.find('.totalitems').text(totalItem);
-    summary.find('.subtotal').text(subTotal);
-    summary.find('.qst').text(QST);
-    summary.find('.gst').text(GST);
-    summary.find('.total').text(total);
-};
+//         subTotal = subTotal / 100;
+//         QST = parseFloat(((subTotal * 100) * 9975 / 100000 / 100).toPrecision(12)).toFixed(2);
+//         GST = parseFloat((subTotal * 100 * 5 / 10000).toPrecision(12)).toFixed(2);
+//         total = parseFloat((subTotal + Number(QST) + Number(GST)).toPrecision(12));
+//     }
+//     // write in page
+//     let summary = $('.total-price>table');
+//     summary.find('.totalitems').text(totalItem);
+//     summary.find('.subtotal').text(subTotal);
+//     summary.find('.qst').text(QST);
+//     summary.find('.gst').text(GST);
+//     summary.find('.total').text(total);
+// };
 
 function removeItem(name) {
     // only called when exist good in the cart

@@ -276,6 +276,10 @@ a, a:hover {
     padding-right: 9px;
     padding-left: 9px;
     padding-bottom: 9px;
+    
+}
+#goods_list .item:nth-child(5){
+    margin-right: 0;
 }
 #goods_list .item:hover {
     background-color: #f8f8f8;

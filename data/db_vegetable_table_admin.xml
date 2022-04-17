@@ -1,0 +1,6 @@
+        <!-- 表 admin -->
+        <table name="admin">
+            <column name="id">1</column>
+            <column name="name">admin</column>
+            <column name="password">21232f297a57a5a743894a0e4a801fc3</column>
+        </table>

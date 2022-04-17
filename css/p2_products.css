@@ -318,6 +318,7 @@ a {
 }
 .box-bd ul li a img {
     width: 100%;
+    height: 151px;
 }
 .box-bd ul li em img {
     position: absolute;
