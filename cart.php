@@ -65,9 +65,16 @@ include("conn.php");
                 <a href="index.php"><img src="image/logo.jpg" width="46" height="46" alt=""></a>
             </div>
             <ul>
-                <li><a href="signin.php">Sign in</a><span>|</span></li>
-                <li><a href="signup.php">Sign up</a><span>|</span></li>
-                <li><a id="name">Account</a><span>|</span></li>
+            <?php if (isset($_SESSION['user'])) { ?>
+                    <li><a href="logout.php">Logout</a><span>|</span></li>
+                    <?php if ($_SESSION['admin']==1) {?>
+                        <li><a href="back-end/index.php">Admin</a><span>|</span></li>
+                    <?php } ?>
+                <?php } else { ?>
+                    <li><a href="signin.php">Sign in</a><span>|</span></li>
+                    <li><a href="signup.php">Sign up</a><span>|</span></li>
+                <?php } ?>
+                <li><a id="name"><?php echo isset($_SESSION['user']) ? $_SESSION['user'] : "Account"?></a><span>|</span></li>
                 <li><a href="cart.php">Cart</a></li>
             </ul>
         </div>

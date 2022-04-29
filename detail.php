@@ -8,7 +8,7 @@ include("conn.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apples</title>
+    <title>Store</title>
 
     <link rel="stylesheet" href="p3_css/base_general.css">
     <link rel="stylesheet" href="p3_css/fruit_general.css">
