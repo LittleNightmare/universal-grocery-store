@@ -3,49 +3,26 @@ include("conn.php");
 if (isset($_POST['submit'])) {
     $username = $_POST['user'];
     $password = sha1($_POST['psw']);
-    // $sql = "select * from users where username='$username' and password='$password'"; //sql选择语句
-    // $result = mysqli_query($link, $sql);
-    // $num = mysqli_num_rows($result);
-    // if ($num > 0)  
-    // {
-    //     $_SESSION['user'] = $username;
-        // if(isset($_POST['cb'])){
-        //     setcookie("user", $username, time() + (86400 * 30), '/');
-        // }
-    //     // admin part
-    //     $sql = "select * from admin where name='$username' and password='$password'";
-    //     $result = mysqli_query($link, $sql);
-    //     $num = mysqli_num_rows($result);
-    //     if ($num > 0){
-    //         $_SESSION['admin'] = 1;
-    //     }
-    //     echo "<script>alert('Log in successfully');window.location.href='index.php'</script>";
-    // } else {
-    //     echo "<script>alert('Logon failure');window.location.href='signin.php'</script>";
-    // }
-
-    //xml
-    $file = './data/users/'.$username.'.xml';
-    if(file_exists($file)){
-        $xml = simplexml_load_file($file);
-        $user = get_object_vars($xml->children());
-        // print_r($user);
-        if($user['username'] == $username && $user['password'] == $password){
-            $_SESSION['user'] = $username;
-            if(isset($_POST['cb'])){
-                setcookie("user", $username, time() + (86400 * 30), '/');
-            }
-            if($user['admin'] == 1){
-                $_SESSION['admin'] = 1;
-            }
-            echo "<script>alert('Log in successfully');window.location.href='index.php'</script>";
-        }else{
-            echo "<script>alert('Logon failure');window.location.href='signin.php'</script>";
+    $sql = "select * from users where username='$username' and password='$password'"; //sql选择语句
+    $result = mysqli_query($link, $sql);
+    $num = mysqli_num_rows($result);
+    if ($num > 0)  
+    {
+        $_SESSION['user'] = $username;
+        if(isset($_POST['cb'])){
+            setcookie("user", $username, time() + (86400 * 30), '/');
         }
-    } else{
+        // admin part
+        $sql = "select * from admin where name='$username' and password='$password'";
+        $result = mysqli_query($link, $sql);
+        $num = mysqli_num_rows($result);
+        if ($num > 0){
+            $_SESSION['admin'] = 1;
+        }
+        echo "<script>alert('Log in successfully');window.location.href='index.php'</script>";
+    } else {
         echo "<script>alert('Logon failure');window.location.href='signin.php'</script>";
     }
-    
 }
 ?>
 <!DOCTYPE html>

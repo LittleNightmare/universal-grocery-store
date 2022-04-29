@@ -1,43 +1,19 @@
-<?php
-// ini_set('error_reporting', 'E_ALL ^ E_NOTICE');
-// header("Content-type: text/html; charset=utf-8");
+<?php session_start();
+ini_set('error_reporting', 'E_ALL ^ E_NOTICE');
+header("Content-type: text/html; charset=utf-8");
 include("conn.php");
 if (isset($_POST['submit'])) {
     $username = $_POST['user'];
     $receive =isset($_POST['receive'])?$_POST['receive']:'0';
     $password = sha1($_POST['psw']);
-    // check user exists
-    $sql = "select * from users where username='$username'";
-    $result = mysqli_query($link, $sql);
-    $num = mysqli_num_rows($result);
-    if($num==0){
-        $sql = "INSERT INTO users (`username`,`password`,`receive`,`time`)  VALUES('$username','$password','$receive',now())"; 
-        $result = mysqli_query($link, $sql);
-        // if ($result == true) 
-        // {
-        //     echo "<script>alert('Registered successfully');window.location.href='signin.php'</script>";
-        // } else {
-        //     echo "<script>alert('Registration failed');window.location.href='signup.php'</script>";
-        // }
-        }// }else{
-    //     echo "<script>alert('test0')</script>";
-    //     // echo "<script>alert('Registration failed, user already exists');window.location.href='signup.php'</script>";
-    // }
-
-    //xml
-    $file = './data/users/'.$username.'.xml';
-    if (!file_exists($file)){
-        $user = array('username'=>$username, 'password'=>$password,'receive'=>$receive, 'time'=>time());
-        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><userObject/>');
-        $userElement = $xml->addChild('user');
-        foreach($user as $x => $x_value) {
-            $userElement = $xml->addChild($x, $x_value);
-        }
-        $xml->asXml($file);
+    $sql = "INSERT INTO users (`username`,`password`,`receive`,`time`)  VALUES('$username','$password','$receive',now())"; 
+ 
+  $result = mysqli_query($link, $sql);
+    if ($result == true) 
+    {
         echo "<script>alert('Registered successfully');window.location.href='signin.php'</script>";
-    }
-    else{
-        echo "<script>alert('Registration failed, user already exists');window.location.href='signup.php'</script>";
+    } else {
+        echo "<script>alert('Registration failed');window.location.href='signup.php'</script>";
     }
 }
 ?>
@@ -63,7 +39,7 @@ if (isset($_POST['submit'])) {
             <h1>Welcome to Universal Grocery Store</h1>
         </div>
     </div>
-    <form action="signup.php" method="post"   name="jcform" onsubmit="return Check()" >
+    <form action="signup.php" method="post"   name="jcform" onsubmit="return Jiance()" >
     <!-- box -->
     <div class="box">
         <div class="w">
@@ -131,7 +107,7 @@ if (isset($_POST['submit'])) {
 
 
 <script language="javascript">
-function Check() {
+function Jiance() {
     if (document.jcform.user.value=="") 
     {
         window.alert('enter Email Address!'); 
