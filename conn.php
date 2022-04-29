@@ -3,5 +3,10 @@
   header("Content-type: text/html; charset=utf-8"); 
   ini_set('error_reporting', 'E_ALL ^ E_NOTICE'); 
 
-   mysqli_query($link,"set names utf8");
+  mysqli_query($link,"set names utf8");
+  
+  if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
+    $_SESSION['user'] = $_COOKIE['user'];
+
+ }
   ?>

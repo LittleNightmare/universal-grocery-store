@@ -9,6 +9,10 @@ if (isset($_POST['submit'])) {
     if ($num > 0)  
     {
         $_SESSION['user'] = $username;
+        if(isset($_POST['cb'])){
+            setcookie("user", $username, time() + (86400 * 30), '/');
+        }
+        // admin part
         $sql = "select * from admin where name='$username' and password='$password'";
         $result = mysqli_query($link, $sql);
         $num = mysqli_num_rows($result);
@@ -52,7 +56,7 @@ if (isset($_POST['submit'])) {
                 <input type="text" id="user" name="user" placeholder="Email Address">
                 <input type="password" id="psw" name="psw" placeholder="Password">
                 <a href="#" class="fp">Forgot Password?</a>
-                <input type="checkbox" id="cb" >
+                <input type="checkbox" id="cb" name="cb">
                 <h3>Remember Me</h3>
                  
                 <button  class="signin" type="submit" name="submit">Sign In</button>
