@@ -1,11 +1,11 @@
 <?php
     include("../conn.php");
     if (isset($_SESSION['user'])){
-      $username = $_SESSION['user'];
-      $sql = "select * from admin where name='$username'";
-      $result = mysqli_query($link, $sql);
-      $num = mysqli_num_rows($result);
-      if ($num == 0) {
+      // $username = $_SESSION['user'];
+      // $sql = "select * from admin where name='$username'";
+      // $result = mysqli_query($link, $sql);
+      // $num = mysqli_num_rows($result);
+      if ($_SESSION["admin"] != 1) {
         echo "<script>alert('No permission'); window.location.href='../index.php'</script>";
       } 
     } else{
